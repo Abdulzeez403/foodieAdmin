@@ -11,25 +11,27 @@ import { InputSearchComponent } from "../_components/input/searchInput";
 
 
 const MenuDetial = () => {
-    const { menu: singleMenu } = useMenuContext()
-    console.log(singleMenu, "detail page")
 
-    const [modal, setModal] = useState<{ show: boolean, data?: IMenu, type?: "Create Menu " | "Update Menu" }>({
+    const { menu } = useMenuContext();
+
+    const [modal, setModal] = useState<{ show: boolean, data?: IMenu, type?: "Create Menu" | "Update Menu" }>({
         show: false,
-        type: "Create Menu "
+        type: "Create Menu"
     })
     const [search, setSearch] = useState()
 
     const handleModal = () => {
-        setModal({ show: true, type: "Create Menu " })
-    }
-    const handleUpdateModal = () => {
-        setModal({ show: true, data: singleMenu, type: "Update Menu" });
+        setModal({ show: true, type: "Create Menu" });
     };
+
+    const handleUpdateModal = (values: IMenu) => {
+        setModal({ show: true, data: menu, type: "Update Menu" });
+    };
+
+
     return (
         <div className="mt-10">
             <div className="mx-4">
-
                 <div className="my-4 flex gap-3">
                     <div className="w-[23rem]">
                         <InputSearchComponent
@@ -48,17 +50,12 @@ const MenuDetial = () => {
                             onClick={() => { handleModal() }}>
                             CreateMenu
                         </ButtonComponent>
-
                     </div>
-
                 </div>
-
                 <div>
-                    <MenuList handleUpdateModal={() => handleUpdateModal()} />
+                    <MenuList handleUpdateModal={() => handleUpdateModal(menu?._id as any)} />
                 </div>
             </div>
-
-
             <ModalComponent1
                 title={modal?.type as any}
                 open={modal?.show}

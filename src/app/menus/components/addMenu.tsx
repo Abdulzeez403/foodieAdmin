@@ -15,7 +15,7 @@ interface IProps {
 const AddMenu = ({ singleMenu }: IProps) => {
 
     const [files, setFiles] = useState([]) as any;
-    const { addMenu, updateMenu } = useMenuContext()
+    const { addMenu, updateMenu } = useMenuContext();
 
     console.log(singleMenu, "Updating...")
     console.log(singleMenu?._id, "upate id")

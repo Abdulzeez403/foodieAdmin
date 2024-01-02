@@ -1,0 +1,23 @@
+/* TableComponent.css */
+
+.pending-status {
+  color: orange; /* Set your desired color for 'Pending' status */
+}
+
+.confirmed-status {
+  color: green; /* Set your desired color for 'Confirmed' status */
+}
+
+.delivered-status {
+  color: blue; /* Set your desired color for 'Delivered' status */
+}
+
+.cancelled-status {
+  color: red; /* Set your desired color for 'Cancelled' status */
+}
+
+.rejected-status {
+  color: purple; /* Set your desired color for 'Rejected' status */
+}
+
+/* You can add more status classes as needed */

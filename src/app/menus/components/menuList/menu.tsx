@@ -1,6 +1,7 @@
 import TableComponent from '@/app/menus/components/table'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useMenuContext } from '../../context'
+
 
 
 interface IProps {
@@ -10,6 +11,7 @@ interface IProps {
 
 const MenuList = ({ handleUpdateModal }: IProps) => {
     const { menus, getMenus, loading } = useMenuContext()
+
     console.log(menus, "the menus!")
 
     useEffect(() => {
@@ -22,6 +24,7 @@ const MenuList = ({ handleUpdateModal }: IProps) => {
                 data={menus as any}
                 loading={loading}
                 handleUpdateModal={() => handleUpdateModal()} />
+
         </div>
     )
 }

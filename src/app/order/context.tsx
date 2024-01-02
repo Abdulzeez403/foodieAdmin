@@ -57,10 +57,10 @@ export const OrderProvder: React.FC<IProps> = ({ children }) => {
             // toast.error(err as any)
         }
     };
-    const updateOrder = async (values: IOrder, orderId: string) => {
+    const updateOrder = async (values: any, orderId: string) => {
         setLoading(true)
         try {
-            const response = await fetch(`http://localhost:5000/api/menuItems/${orderId}`, {
+            const response = await fetch(`http://localhost:5000/api/order/${orderId}`, {
                 method: "PUT",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify(values),

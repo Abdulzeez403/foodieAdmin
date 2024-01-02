@@ -6,6 +6,7 @@ import { MdDeleteSweep } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import { useMenuContext } from '../context';
 import { IImage } from '../model';
+import MenuList from './menuList/menu';
 
 interface DataType {
     key: string;
@@ -22,7 +23,6 @@ interface IProps {
     data: any
     loading: boolean
     handleUpdateModal: () => void;
-
 }
 
 const TableComponent = ({ data, loading, handleUpdateModal }: IProps) => {
@@ -58,7 +58,6 @@ const TableComponent = ({ data, loading, handleUpdateModal }: IProps) => {
             dataIndex: 'description',
             key: 'description',
         },
-
         {
             title: 'Action',
             key: 'action',
@@ -84,13 +83,18 @@ const TableComponent = ({ data, loading, handleUpdateModal }: IProps) => {
 
 
     return (
-        <Table
-            tableLayout="fixed"
-            size="middle"
-            columns={columns}
-            dataSource={data}
-            loading={loading}
-        />
+        <div>
+            <Table
+                tableLayout="fixed"
+                size="middle"
+                columns={columns}
+                dataSource={data}
+                loading={loading}
+            />
+
+        </div>
+
+
     )
 
 }

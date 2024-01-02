@@ -4,6 +4,9 @@ import { useOrderContext } from '../../context'
 import { TableComponent } from '../table'
 import { InputSearchComponent } from '@/app/_components/input/searchInput'
 import { SelectorComponent } from '@/app/_components/dropdown'
+import { SummaryCard } from '@/app/_components/card'
+import { TiShoppingCart } from "react-icons/ti";
+
 
 
 
@@ -18,6 +21,22 @@ export const OrderLists = () => {
 
     return (
         <div className="mt-10">
+            <div className='flex gap-5'>
+                <SummaryCard
+                    total={orders?.length as any}
+                    name="Total Order"
+                    icon={
+                        <TiShoppingCart color={40} />
+
+                    } />
+                <SummaryCard
+                    total={orders?.length as any}
+                    name="Pending Order"
+                    icon={
+                        <TiShoppingCart color={40} />
+
+                    } />
+            </div>
             <div className="my-4 flex gap-6">
                 <div className="w-[23rem]">
                     <InputSearchComponent
