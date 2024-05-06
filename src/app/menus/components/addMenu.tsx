@@ -48,6 +48,7 @@ const AddMenu = ({ singleMenu }: IProps) => {
         fileList: newFileList,
     }: any) => {
         setFiles(newFileList);
+        console.log(files, "image...")
     };
     return (
         <>
